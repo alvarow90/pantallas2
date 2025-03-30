@@ -8,8 +8,8 @@
     Title="pantallas">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Nutricion"
+        ContentTemplate="{DataTemplate local:Nutricion}"
+        Route="Nutricion" />
 
 </Shell>
