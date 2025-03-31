@@ -1,24 +1,32 @@
-namespace pantallas;
+using Microsoft.Maui.Controls;
 
-public partial class Dashboard : ContentPage
+namespace pantallas
 {
-	public Dashboard()
-	{
-		InitializeComponent();
-	}
-    private void OnDashboardClicked(object sender, EventArgs e)
+    public partial class Dashboard : ContentPage
     {
-    }
+        public Dashboard()
+        {
+            InitializeComponent();
+        }
 
-    private void OnEntrenamientoClicked(object sender, EventArgs e)
-    {
-    }
+        private async void OnDashboardClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//dashboard");
+        }
 
-    private void OnNutricionClicked(object sender, EventArgs e)
-    {
-    }
+        private async void OnEntrenamientoClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//entrenamiento");
+        }
 
-    private void OnChatClicked(object sender, EventArgs e)
-    {
+        private async void OnNutricionClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//nutricion");
+        }
+
+        private async void OnChatClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//chat");
+        }
     }
 }
