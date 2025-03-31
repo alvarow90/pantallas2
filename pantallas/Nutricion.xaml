@@ -151,31 +151,18 @@
                 </Frame>
             </VerticalStackLayout>
         </ScrollView>
+        <!-- Botones de navegación abajo -->
+        <!-- BARRA DE NAVEGACIÓN: fija en la parte inferior -->
+        <!-- Botones de navegación abajo -->
         <Grid Grid.Row="2"
               ColumnDefinitions="*,*,*,*"
               Padding="10"
               BackgroundColor="#2E2E2E"
               HorizontalOptions="FillAndExpand">
-            <Button x:Name="BtnDashboard"
-                    Grid.Column="0"
-                    Text="Dashboard"
-                    TextColor="White"
-                    Clicked="OnDashboardClicked"/>
-            <Button x:Name="BtnEntrenamiento"
-                    Grid.Column="1"
-                    Text="Entrenamiento"
-                    TextColor="White"
-                    Clicked="OnEntrenamientoClicked"/>
-            <Button x:Name="BtnNutricion"
-                    Grid.Column="2"
-                    Text="Nutrición"
-                    TextColor="White"
-                    Clicked="OnNutricionClicked"/>
-            <Button x:Name="BtnChat"
-                    Grid.Column="3"
-                    Text="Chat"
-                    TextColor="White"
-                    Clicked="OnChatClicked"/>
+            <Button x:Name="BtnDashboard" Grid.Column="0" Text="Dashboard" Clicked="OnDashboardClicked" TextColor="White"/>
+            <Button x:Name="BtnEntrenamiento" Grid.Column="1" Text="Entrenamiento" Clicked="OnEntrenamientoClicked" TextColor="White"/>
+            <Button x:Name="BtnNutricion" Grid.Column="2" Text="Nutrición" Clicked="OnNutricionClicked" TextColor="White"/>
+            <Button x:Name="BtnChat" Grid.Column="3" Text="Chat" Clicked="OnChatClicked" TextColor="White"/>
         </Grid>
     </Grid>
 </ContentPage>
