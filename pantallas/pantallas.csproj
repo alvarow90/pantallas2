@@ -63,9 +63,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Chat.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Dashboard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
