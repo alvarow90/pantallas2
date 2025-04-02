@@ -6,13 +6,17 @@ namespace pantallas
 {
     public partial class App : Application
     {
+        public static Services.DatabaseService BaseDeDatos { get; private set; }
+        public static Models.Usuario? UsuarioActual { get; set; }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new AuthPage());
+            string rutaDB = Path.Combine(FileSystem.AppDataDirectory, "usuarios.db");
+            BaseDeDatos = new Services.DatabaseService(rutaDB);
 
-            // Mostrar primero la pantalla de Login
+            MainPage = new NavigationPage(new AuthPage());
         }
     }
 }

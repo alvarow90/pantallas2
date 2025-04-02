@@ -2,10 +2,13 @@ namespace pantallas;
 
 public partial class Dashboard : ContentPage
 {
-	public Dashboard()
-	{
-		InitializeComponent();
-	}
+    public Dashboard()
+    {
+        InitializeComponent();
+
+      
+    }
+
     private void OnDashboardClicked(object sender, EventArgs e)
     {
     }
