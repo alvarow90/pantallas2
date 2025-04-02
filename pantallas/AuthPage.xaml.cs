@@ -30,6 +30,11 @@ namespace pantallas
             RegisterTabButton.TextColor = Colors.Black;
         }
 
+        private async void OnForgotPasswordTapped(object sender, TappedEventArgs e)
+        {
+            await Navigation.PushAsync(new RecuperarContrasenaPage());
+        }
+
         private async void OnRegisterClicked(object sender, EventArgs e)
         {
             string name = NameEntry.Text?.Trim();

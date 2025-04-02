@@ -30,12 +30,22 @@
         </Frame>
 
         <!-- Login -->
+        <!-- Login -->
         <StackLayout x:Name="LoginForm" Spacing="10">
             <Entry Placeholder="Correo electrónico" />
             <Entry Placeholder="Contraseña" IsPassword="True" />
             <Button Text="Ingresar" BackgroundColor="#800080" TextColor="White"/>
-            <Label Text="Olvidé la contraseña" HorizontalOptions="Center" FontSize="12" TextColor="Gray"/>
+
+            <Label Text="Olvidé la contraseña"
+           HorizontalOptions="Center"
+           FontSize="12"
+           TextColor="Gray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
+
 
         <!-- Registro -->
         <StackLayout x:Name="RegisterForm" Spacing="10" IsVisible="False">
