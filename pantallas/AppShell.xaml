@@ -7,9 +7,24 @@
     Shell.FlyoutBehavior="Disabled"
     Title="pantallas">
 
-    <ShellContent
-        Title="Nutricion"
-        ContentTemplate="{DataTemplate local:Nutricion}"
-        Route="Nutricion" />
+    <TabBar>
+        <ShellContent
+            Title="Nutrición"
+            Icon="🥗"
+            ContentTemplate="{DataTemplate local:Nutricion}"
+            Route="Nutricion" />
+
+        <ShellContent
+            Title="Dashboard"
+            Icon="📊"
+            ContentTemplate="{DataTemplate local:Dashboard}"
+            Route="Dashboard" />
+
+        <ShellContent
+            Title="DS"
+            Icon="📁"
+            ContentTemplate="{DataTemplate local:DS}"
+            Route="DS" />
+    </TabBar>
 
 </Shell>

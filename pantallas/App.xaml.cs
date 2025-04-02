@@ -1,4 +1,8 @@
-﻿namespace pantallas
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+
+namespace pantallas
 {
     public partial class App : Application
     {
@@ -6,7 +10,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LoginPage(); // Mostrar primero la pantalla de Login
         }
     }
 }
