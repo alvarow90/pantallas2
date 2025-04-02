@@ -29,12 +29,26 @@
             </Grid>
         </Frame>
 
-        <!-- Login -->
+
         <!-- Login -->
         <StackLayout x:Name="LoginForm" Spacing="10">
             <Entry Placeholder="Correo electrónico" />
             <Entry Placeholder="Contraseña" IsPassword="True" />
-            <Button Text="Ingresar" BackgroundColor="#800080" TextColor="White"/>
+
+            <Button Text="Ingresar"
+            BackgroundColor="#800080"
+            TextColor="White"/>
+
+            <!-- Botón Iniciar con Google -->
+            <Button Text="Iniciar sesión con Google"
+            Clicked="OnGoogleLoginClicked"
+            BackgroundColor="White"
+            TextColor="Black"
+            BorderColor="Gray"
+            BorderWidth="1"
+            CornerRadius="8"
+            FontAttributes="Bold"
+            />
 
             <Label Text="Olvidé la contraseña"
            HorizontalOptions="Center"
@@ -45,6 +59,7 @@
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
+
 
 
         <!-- Registro -->
