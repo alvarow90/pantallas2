@@ -10,7 +10,8 @@ namespace pantallas
         {
             InitializeComponent();
 
-            MainPage = new LoginPage(); // Mostrar primero la pantalla de Login
+            MainPage = new AuthPage(); // tu nueva pantalla con login/registro
+                                       // Mostrar primero la pantalla de Login
         }
     }
 }
