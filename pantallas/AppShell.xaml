@@ -6,28 +6,9 @@
     Shell.FlyoutBehavior="Disabled"
     Title="pantallas">
 
-    <!-- Ruta oculta -->
-    <ShellContent
-        Route="AuthPage"
-        ContentTemplate="{DataTemplate local:AuthPage}" />
-
-    <TabBar>
-        <ShellContent
-            Title="Nutrición"
-            Icon="🥗"
-            ContentTemplate="{DataTemplate local:Nutricion}"
-            Route="Nutricion" />
-
-        <ShellContent
-            Title="Dashboard"
-            Icon="📊"
-            ContentTemplate="{DataTemplate local:Dashboard}"
-            Route="Dashboard" />
-
-        <ShellContent
-            Title="DS"
-            Icon="📁"
-            ContentTemplate="{DataTemplate local:DS}"
-            Route="DS" />
-    </TabBar>
+    <ShellContent 
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate local:Dashboard}"
+        Route="Dashboard" />
 </Shell>
+

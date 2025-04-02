@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="pantallas.SubirEjercicio"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#1E1E1E"
+    Padding="20">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- BARRA SUPERIOR -->
+        <Grid Grid.Row="0" Padding="20,0" ColumnDefinitions="Auto,*">
+            <ImageButton Source="backarrow.png"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Center"
+                         Clicked="OnBackClicked"
+                         Grid.Column="0"/>
+            <Label Text="Subir Ejercicio"
+                   Margin="20,0,0,0"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#800080"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1" />
+        </Grid>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
+                <!-- Selección de persona mediante lista desplegable -->
+                <Label Text="Selecciona Persona:"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="#EEEEEE"/>
+                <Picker x:Name="PersonaPicker"
+                        Title="Elige una persona"
+                        TextColor="#444444"
+                        BackgroundColor="#EEEEEE"/>
+
+                <!-- Espacio para escribir los ejercicios -->
+                <Label Text="Ejercicios:"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="#EEEEEE"/>
+
+                <!-- Rectángulo 1 -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10">
+                    <Editor Placeholder="Ejercicio 1"
+                            TextColor="#444444"
+                            BackgroundColor="Transparent"
+                            HeightRequest="60"/>
+                </Frame>
+
+                <!-- Rectángulo 2 -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10">
+                    <Editor Placeholder="Ejercicio 2"
+                            TextColor="#444444"
+                            BackgroundColor="Transparent"
+                            HeightRequest="60"/>
+                </Frame>
+
+                <!-- Rectángulo 3 -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10">
+                    <Editor Placeholder="Ejercicio 3"
+                            TextColor="#444444"
+                            BackgroundColor="Transparent"
+                            HeightRequest="60"/>
+                </Frame>
+
+                <!-- Rectángulo 4 -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10">
+                    <Editor Placeholder="Ejercicio 4"
+                            TextColor="#444444"
+                            BackgroundColor="Transparent"
+                            HeightRequest="60"/>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- BOTÓN DE SUBIR -->
+        <Button Grid.Row="2"
+                Text="Subir"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="#800080"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnSubirClicked"/>
+    </Grid>
+</ContentPage>

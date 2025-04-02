@@ -9,20 +9,29 @@ namespace pantallas
             InitializeComponent();
         }
 
-        private void OnDashboardClicked(object sender, EventArgs e)
+        private async void OnDashboardClicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new Detalleentrenamiento());
         }
 
-        private void OnEntrenamientoClicked(object sender, EventArgs e)
-        { 
+        private async void OnEntrenamientoClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NewPage1());
         }
 
-        private void OnNutricionClicked(object sender, EventArgs e)
+        private async void OnNutricionClicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new Nutricion());
         }
 
-        private void OnChatClicked(object sender, EventArgs e)
+        private async void OnChatClicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new Nutricion());
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AsignarNutriologo());
         }
     }
 }

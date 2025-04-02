@@ -8,10 +8,9 @@ namespace pantallas
     {
         public App()
         {
-            InitializeComponent();
 
-            MainPage = new NavigationPage(new AuthPage());
-
+            //MainPage = new NavigationPage(new AuthPage());
+            MainPage = new AppShell();
             // Mostrar primero la pantalla de Login
         }
     }

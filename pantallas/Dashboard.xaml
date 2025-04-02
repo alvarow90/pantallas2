@@ -1,12 +1,13 @@
 <ContentPage 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="pantallas.Dashboard"
+    x:Class="pantallas.Detallenutricion"
     BackgroundColor="#1E1E1E"
     Padding="20">
 
     <Grid RowDefinitions="Auto, *, Auto">
-        <!-- BARRA SUPERIOR: fija en la parte superior -->
+
+        <!-- BARRA SUPERIOR -->
         <Grid Grid.Row="0"
               Padding="20,0"
               ColumnDefinitions="Auto, *">
@@ -26,9 +27,10 @@
                    Grid.Column="1" />
         </Grid>
 
-        <!-- CONTENIDO PRINCIPAL: scrollable -->
+        <!-- CONTENIDO PRINCIPAL -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Spacing="20">
+
                 <!-- Sección "Resumen de Progreso" -->
                 <Frame BackgroundColor="#EEEEEE"
                        CornerRadius="10"
@@ -45,7 +47,6 @@
                                  Margin="0,5"/>
                         <Grid ColumnDefinitions="*,*"
                               ColumnSpacing="20">
-                            <!-- Columna 0: Imagen "semana" y Label -->
                             <VerticalStackLayout Grid.Column="0"
                                                  Spacing="5"
                                                  HorizontalOptions="Center"
@@ -56,7 +57,6 @@
                                 <Label Text="Llevas el 60% de tus rutinas semanales"
                                        TextColor="#444444" />
                             </VerticalStackLayout>
-                            <!-- Columna 1: Imagen "mes" y Label -->
                             <VerticalStackLayout Grid.Column="1"
                                                  Spacing="5"
                                                  HorizontalOptions="Center"
@@ -87,7 +87,6 @@
                                  Margin="0,5"/>
                         <Grid ColumnDefinitions="*,*,*"
                               ColumnSpacing="20">
-                            <!-- Columna 0: Imagen "pecho" y Label -->
                             <VerticalStackLayout Grid.Column="0"
                                                  Spacing="5"
                                                  HorizontalOptions="Center"
@@ -98,7 +97,6 @@
                                 <Label Text="Hoy toca rutina de pecho"
                                        TextColor="#444444" />
                             </VerticalStackLayout>
-                            <!-- Columna 1: Mensaje del coach -->
                             <VerticalStackLayout Grid.Column="1"
                                                  Spacing="5"
                                                  HorizontalOptions="Center"
@@ -118,7 +116,6 @@
                                 <Label Text="Estoy atento por si tienes dudas · 8h"
                                        TextColor="#444444"/>
                             </VerticalStackLayout>
-                            <!-- Columna 2: Botón "Completar tarea" -->
                             <VerticalStackLayout Grid.Column="2"
                                                  HorizontalOptions="Center"
                                                  VerticalOptions="Center">
@@ -128,6 +125,15 @@
                                         CornerRadius="5"/>
                             </VerticalStackLayout>
                         </Grid>
+
+                        <!-- Botón Ver detalle (Entrenamiento) -->
+                        <Button Text="Ver detalle"
+                                BackgroundColor="#FF6B3D"
+                                TextColor="White"
+                                CornerRadius="5"
+                                HorizontalOptions="Center"
+                                Clicked="OnVerDetalleEntrenamiento"
+                                WidthRequest="150"/>
                     </VerticalStackLayout>
                 </Frame>
 
@@ -147,7 +153,6 @@
                                  Margin="0,5"/>
                         <Grid ColumnDefinitions="*,*,*"
                               ColumnSpacing="20">
-                            <!-- Columna 0: Imagen "dieta" y Label -->
                             <VerticalStackLayout Grid.Column="0"
                                                  Spacing="5"
                                                  HorizontalOptions="Center"
@@ -158,7 +163,6 @@
                                 <Label Text="Dieta de volumen"
                                        TextColor="#444444" />
                             </VerticalStackLayout>
-                            <!-- Columna 1: Perfil de la nutrióloga -->
                             <VerticalStackLayout Grid.Column="1"
                                                  Spacing="5"
                                                  HorizontalOptions="Center"
@@ -177,33 +181,34 @@
                                 <Label Text="Lic. Maria Estefania Juarez Aramburu"
                                        TextColor="#444444"/>
                             </VerticalStackLayout>
-                            <!-- Columna 2: Botón "Editar dieta" -->
                             <VerticalStackLayout Grid.Column="2"
                                                  HorizontalOptions="Center"
                                                  VerticalOptions="Center">
-                                <Button Text="Editar dieta"
+                                <Button Text="Ver dieta completa"
                                         BackgroundColor="#FF6B3D"
+                                        Clicked="OnVerDietaCompleta"
                                         TextColor="White"
                                         CornerRadius="5"/>
                             </VerticalStackLayout>
                         </Grid>
+
                     </VerticalStackLayout>
                 </Frame>
+
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- BARRA DE NAVEGACIÓN: fija en la parte inferior -->
-        <!-- Botones de navegación abajo -->
+        <!-- BARRA DE NAVEGACIÓN -->
         <Grid Grid.Row="2"
               ColumnDefinitions="*,*,*,*"
               Padding="10"
               BackgroundColor="#2E2E2E"
               HorizontalOptions="FillAndExpand">
-            <Button x:Name="BtnDashboard" Grid.Column="0" Text="Dashboard" Clicked="OnDashboardClicked" TextColor="White"/>
-            <Button x:Name="BtnEntrenamiento" Grid.Column="1" Text="Entrenamiento" Clicked="OnEntrenamientoClicked" TextColor="White"/>
-            <Button x:Name="BtnNutricion" Grid.Column="2" Text="Nutrición" Clicked="OnNutricionClicked" TextColor="White"/>
-            <Button x:Name="BtnChat" Grid.Column="3" Text="Chat" Clicked="OnChatClicked" TextColor="White"/>
+            <Button x:Name="BtnDashboard" Grid.Column="0" Text="Dashboard" Clicked="OnDashboardClicked" BackgroundColor="#FF6B3D" TextColor="White"/>
+            <Button x:Name="BtnEntrenamiento" Grid.Column="1" Text="Entrenamiento" Clicked="OnEntrenamientoClicked" BackgroundColor="#FF6B3D" TextColor="White"/>
+            <Button x:Name="BtnNutricion" Grid.Column="2" Text="Nutrición" Clicked="OnNutricionClicked" BackgroundColor="#FF6B3D" TextColor="White"/>
+            <Button x:Name="BtnChat" Grid.Column="3" Text="Chat" Clicked="OnChatClicked" BackgroundColor="#FF6B3D" TextColor="White"/>
         </Grid>
+
     </Grid>
 </ContentPage>
-

@@ -1,26 +1,12 @@
-﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls;
 
 namespace pantallas
 {
-    public partial class Dashboard : ContentPage
+    public partial class Detallenutricion : ContentPage
     {
-        public Dashboard()
+        public Detallenutricion()
         {
-            InitializeComponent(); // ← Este método lo genera el archivo .g.cs cuando todo está bien
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
-
-        private async void OnVerDietaCompleta(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Detallenutricion());
-        }
-        private async void OnVerDetalleEntrenamiento(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Detalleentrenamiento());
+            InitializeComponent(); // Este S� va
         }
         private async void OnDashboardClicked(object sender, EventArgs e)
         {
