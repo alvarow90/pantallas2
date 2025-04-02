@@ -1,0 +1,78 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pantallas.Chat"
+             Title="Chat">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <!-- Título -->
+        <Label Text="Chat" 
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,10"
+               Grid.Row="0"/>
+
+        <!-- Selector de contacto -->
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Spacing="20"
+                     Grid.Row="1">
+            <Label x:Name="LabelNutriologo"
+                   Text="Nutriólogo"
+                   FontSize="16"
+                   Padding="20,10"
+                   BackgroundColor="Orange"/>
+            <Label x:Name="LabelEntrenador"
+                   Text="Entrenador"
+                   FontSize="16"
+                   Padding="20,10"
+                   BackgroundColor="Orange"/>
+        </StackLayout>
+
+        <!-- Área de mensajes -->
+        <CollectionView x:Name="ChatMessages"
+                        Grid.Row="2"
+                        BackgroundColor="Black"
+                        Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="{Binding MessageColor}"
+                           Padding="10"
+                           HorizontalOptions="{Binding Alignment}"
+                           CornerRadius="10">
+                        <Label Text="{Binding Text}" TextColor="Blue"/>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Entrada de mensaje -->
+        <Grid ColumnDefinitions="*,Auto"
+              Padding="10"
+              BackgroundColor="blue"
+              Grid.Row="3">
+            <Entry x:Name="ChatEntry"
+                   Placeholder="Escribe un mensaje..."
+                   BackgroundColor="white"
+                   HeightRequest="40"/>
+            <Button x:Name="BtnEnviar"
+                    Text="Enviar"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    Margin="10,0,0,0"
+                    Grid.Column="1"/>
+        </Grid>
+
+        <!-- Menú inferior -->
+        <Grid Grid.Row="4"
+              ColumnDefinitions="*,*,*,*"
+              Padding="10"
+              BackgroundColor="#6A5ACD"
+              HorizontalOptions="FillAndExpand">
+            <Button x:Name="BtnDashboard" Grid.Column="0" Text="Dashboard" Clicked="OnDashboardClicked" TextColor="White" BackgroundColor="Transparent"/>
+            <Button x:Name="BtnEntrenamiento" Grid.Column="1" Text="Entrenamiento" Clicked="OnEntrenamientoClicked" TextColor="White" BackgroundColor="Transparent"/>
+            <Button x:Name="BtnNutricion" Grid.Column="2" Text="Nutrición" Clicked="OnNutricionClicked" TextColor="White" BackgroundColor="Transparent"/>
+            <Button x:Name="BtnChat" Grid.Column="3" Text="Chat" Clicked="OnChatClicked" TextColor="White" BackgroundColor="Transparent"/>
+        </Grid>
+    </Grid>
+</ContentPage>

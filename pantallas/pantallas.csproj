@@ -68,6 +68,9 @@
 	  <Compile Update="LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Chat.xaml.cs">
+	    <DependentUpon>Chat.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="RecuperarContrasenaPage.xaml.cs">
 	    <DependentUpon>RecuperarContrasenaPage.xaml</DependentUpon>
 	  </Compile>
@@ -84,6 +87,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Chat.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="RecuperarContrasenaPage.xaml">

@@ -41,7 +41,7 @@
 
             <!-- Botón Iniciar con Google -->
             <Button Text="Iniciar sesión con Google"
-            Clicked="OnGoogleLoginClicked"
+          
             BackgroundColor="White"
             TextColor="Black"
             BorderColor="Gray"
