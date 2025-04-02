@@ -9,8 +9,7 @@ namespace pantallas
         public App()
         {
 
-            //MainPage = new NavigationPage(new AuthPage());
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new AuthPage());
             // Mostrar primero la pantalla de Login
         }
     }

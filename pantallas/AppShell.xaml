@@ -1,4 +1,4 @@
-<Shell
+﻿<Shell
     x:Class="pantallas.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,9 +6,29 @@
     Shell.FlyoutBehavior="Disabled"
     Title="pantallas">
 
-    <ShellContent 
-        Title="Dashboard"
-        ContentTemplate="{DataTemplate local:Dashboard}"
-        Route="Dashboard" />
+    <!-- Ruta oculta -->
+    <ShellContent
+        Route="AuthPage"
+        ContentTemplate="{DataTemplate local:AuthPage}" />
+
+    <TabBar>
+        <ShellContent
+            Title="Nutrición"
+            Icon="🥗"
+            ContentTemplate="{DataTemplate local:Nutricion}"
+            Route="Nutricion" />
+
+        <ShellContent
+            Title="Dashboard"
+            Icon="📊"
+            ContentTemplate="{DataTemplate local:Dashboard}"
+            Route="Dashboard" />
+
+        <ShellContent
+            Title="DS"
+            Icon="📁"
+            ContentTemplate="{DataTemplate local:DS}"
+            Route="DS" />
+    </TabBar>
 </Shell>
 
