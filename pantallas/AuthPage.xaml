@@ -9,28 +9,27 @@
         <Image Source="placeholder.png" HeightRequest="120" HorizontalOptions="Center"/>
         <Label Text="Somos más que un GYM" HorizontalOptions="Center" FontSize="18" TextColor="#666"/>
 
+        <!-- Botones pestaña -->
         <Frame CornerRadius="10" Padding="0" BackgroundColor="#E0E0E0">
-            <Grid ColumnDefinitions="*,*"
-          Padding="5">
+            <Grid ColumnDefinitions="*,*" Padding="5">
                 <Button Text="Ingresar"
-                Clicked="OnLoginTabClicked"
-                x:Name="LoginTabButton"
-                BackgroundColor="White"
-                TextColor="Black"
-                CornerRadius="10"
-                Grid.Column="0"/>
+                        Clicked="OnLoginTabClicked"
+                        x:Name="LoginTabButton"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        CornerRadius="10"
+                        Grid.Column="0"/>
                 <Button Text="Crear cuenta"
-                Clicked="OnRegisterTabClicked"
-                x:Name="RegisterTabButton"
-                BackgroundColor="Transparent"
-                TextColor="Gray"
-                CornerRadius="10"
-                Grid.Column="1"/>
+                        Clicked="OnRegisterTabClicked"
+                        x:Name="RegisterTabButton"
+                        BackgroundColor="Transparent"
+                        TextColor="Gray"
+                        CornerRadius="10"
+                        Grid.Column="1"/>
             </Grid>
         </Frame>
 
-
-        <!-- Formulario de ingreso -->
+        <!-- Login -->
         <StackLayout x:Name="LoginForm" Spacing="10">
             <Entry Placeholder="Correo electrónico" />
             <Entry Placeholder="Contraseña" IsPassword="True" />
@@ -38,14 +37,29 @@
             <Label Text="Olvidé la contraseña" HorizontalOptions="Center" FontSize="12" TextColor="Gray"/>
         </StackLayout>
 
-        <!-- Formulario de registro -->
+        <!-- Registro -->
         <StackLayout x:Name="RegisterForm" Spacing="10" IsVisible="False">
-            <Entry Placeholder="Nombre completo" />
-            <Entry Placeholder="Correo electrónico" />
-            <Entry Placeholder="Contraseña" IsPassword="True"/>
-            <Entry Placeholder="Confirmar contraseña" IsPassword="True"/>
-            <Button Text="Registrarse" BackgroundColor="#FF6B3D" TextColor="White"/>
+            <Entry x:Name="NameEntry" Placeholder="Nombre completo" />
+            <Entry x:Name="EmailEntry" Placeholder="Correo electrónico" />
+            <Picker x:Name="RolePicker" Title="Selecciona tu rol">
+                <Picker.Items>
+                    <x:String>Usuario</x:String>
+                    <x:String>Nutriólogo</x:String>
+                    <x:String>Entrenador</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True"/>
+            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirmar contraseña" IsPassword="True"/>
+            <Button Text="Registrarse"
+            BackgroundColor="#FF6B3D"
+            TextColor="White"
+            Clicked="OnRegisterClicked"/>
+            <Label x:Name="RegisterMessageLabel"
+           FontAttributes="Bold"
+           TextColor="Red"
+           HorizontalOptions="Center" />
         </StackLayout>
+
 
     </VerticalStackLayout>
 </ContentPage>

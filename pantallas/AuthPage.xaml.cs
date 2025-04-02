@@ -1,4 +1,5 @@
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;
 
 namespace pantallas
 {
@@ -28,5 +29,46 @@ namespace pantallas
             RegisterTabButton.BackgroundColor = Colors.White;
             RegisterTabButton.TextColor = Colors.Black;
         }
+
+        private async void OnRegisterClicked(object sender, EventArgs e)
+        {
+            string name = NameEntry.Text?.Trim();
+            string email = EmailEntry.Text?.Trim();
+            string password = PasswordEntry.Text;
+            string confirmPassword = ConfirmPasswordEntry.Text;
+            string role = RolePicker.SelectedItem?.ToString();
+
+            // Validaciones
+            if (string.IsNullOrWhiteSpace(name) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(confirmPassword) ||
+                string.IsNullOrWhiteSpace(role))
+            {
+                RegisterMessageLabel.TextColor = Colors.Red;
+                RegisterMessageLabel.Text = "Todos los campos son obligatorios.";
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                RegisterMessageLabel.TextColor = Colors.Red;
+                RegisterMessageLabel.Text = "Las contraseñas no coinciden.";
+                return;
+            }
+
+            // Simulación de guardado
+            Console.WriteLine($"[REGISTRO] Nombre: {name}, Email: {email}, Rol: {role}");
+
+            RegisterMessageLabel.TextColor = Colors.Green;
+            RegisterMessageLabel.Text = $"¡Registro exitoso como {role}!";
+
+            await Task.Delay(500);
+
+            Application.Current.MainPage = new AppShell();
+            await Task.Delay(100);
+            await Shell.Current.GoToAsync("//Dashboard");
+        }
+
     }
 }
