@@ -109,7 +109,7 @@
                                        WidthRequest="80"
                                        Padding="0"
                                        HorizontalOptions="Center">
-                                    <Image Source="profile.png" Aspect="AspectFill"/>
+                                    <Image Source="vladi.jpg" Aspect="AspectFill"/>
                                 </Frame>
                                 <Label Text="Héctor Morales"
                                        HorizontalOptions="Center"

@@ -84,7 +84,7 @@
 	  <MauiXaml Update="Dashboard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="DS.xaml">
+	  <MauiXaml Update="Entrenador.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="LoginPage.xaml">

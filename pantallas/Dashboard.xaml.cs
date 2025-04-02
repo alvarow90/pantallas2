@@ -1,27 +1,30 @@
-namespace pantallas;
-
-public partial class Dashboard : ContentPage
+namespace pantallas
 {
-    public Dashboard()
+    public partial class Dashboard : ContentPage
     {
-        InitializeComponent();
+        public Dashboard()
+        {
+            InitializeComponent();
+        }
 
-      
-    }
+        private async void OnDashboardClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Dashboard");
+        }
 
-    private void OnDashboardClicked(object sender, EventArgs e)
-    {
-    }
+        private async void OnEntrenamientoClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Entrenamiento");
+        }
 
-    private void OnEntrenamientoClicked(object sender, EventArgs e)
-    {
-    }
+        private async void OnNutricionClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Nutricion");
+        }
 
-    private void OnNutricionClicked(object sender, EventArgs e)
-    {
-    }
-
-    private void OnChatClicked(object sender, EventArgs e)
-    {
+        private async void OnChatClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Chat");
+        }
     }
 }
