@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="pantallas.Entrenador"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#1E1E1E"
+    Padding="20">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- BARRA SUPERIOR -->
+        <Grid Grid.Row="0" Padding="20,0" ColumnDefinitions="Auto,*">
+            <ImageButton Source="backarrow.png"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Center"
+                         Clicked="OnBackClicked"
+                         Grid.Column="0"/>
+            <Label Text="Seleccionar Entrenador"
+                   Margin="20,0,0,0"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#800080"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1" />
+        </Grid>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
+                <Label Text="Elige un entrenador:"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#EEEEEE" />
+
+                <!-- Recuadro Entrenador 1 -->
+                <Frame x:Name="TrainerFrame1"
+                       BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       HorizontalOptions="FillAndExpand">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainerTapped"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="Entrenador Juan"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#444444"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Frame>
+
+                <!-- Recuadro Entrenador 2 -->
+                <Frame x:Name="TrainerFrame2"
+                       BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       HorizontalOptions="FillAndExpand">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainerTapped"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="Entrenador María"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#444444"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Frame>
+
+                <!-- Recuadro Entrenador 3 -->
+                <Frame x:Name="TrainerFrame3"
+                       BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       HorizontalOptions="FillAndExpand">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainerTapped"/>
+                    </Frame.GestureRecognizers>
+                    <Label Text="Entrenador Carlos"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#444444"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Frame>
+
+                <!-- Botón de Confirmar Selección -->
+                <Button Text="Confirmar selección"
+                        FontAttributes="Bold"
+                        BackgroundColor="#800080"
+                        TextColor="White"
+                        Clicked="OnConfirmSelectionClicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,*,*,*"
+              Padding="10"
+              BackgroundColor="#2E2E2E">
+            <Button x:Name="BtnDashboard"
+                    Grid.Column="0"
+                    Text="Dashboard"
+                    TextColor="White"
+                    Clicked="OnDashboardClicked"/>
+            <Button x:Name="BtnEntrenamiento"
+                    Grid.Column="1"
+                    Text="Entrenamiento"
+                    TextColor="White"/>
+            <Button x:Name="BtnNutricion"
+                    Grid.Column="2"
+                    Text="Nutrición"
+                    TextColor="White"
+                    Clicked="OnNutricionClicked"/>
+            <Button x:Name="BtnChat"
+                    Grid.Column="3"
+                    Text="Chat"
+                    TextColor="White"
+                    Clicked="OnChatClicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>

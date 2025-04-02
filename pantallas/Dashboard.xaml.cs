@@ -1,5 +1,5 @@
-﻿using Microsoft.Maui.Controls;
 
+using Microsoft.Maui.Controls;
 namespace pantallas
 {
     public partial class Dashboard : ContentPage
@@ -37,6 +37,20 @@ namespace pantallas
         private async void OnChatClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Nutricion());
+            InitializeComponent();
+
+            // Mostrar saludo personalizado
+            if (App.UsuarioActual != null)
+            {
+                LabelBienvenida.Text = $"Hola, {App.UsuarioActual.Nombre}!";
+            }
+            else
+            {
+                LabelBienvenida.Text = "Hola, invitado!";
+            }
+        }
+
+        
         }
     }
 }

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="pantallas.Ajustes"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#1E1E1E"
+    Padding="20">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- BARRA SUPERIOR -->
+        <Grid Grid.Row="0" Padding="20,0" ColumnDefinitions="Auto,*">
+            <ImageButton Source="backarrow.png"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Center"
+                         Clicked="OnBackClicked"
+                         Grid.Column="0"/>
+            <Label Text="Ajustes"
+                   Margin="20,0,0,0"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#800080"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1" />
+        </Grid>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
+                <!-- SECCIÓN PERFIL -->
+                <Label Text="Perfil"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="#EEEEEE" />
+
+                <Frame BackgroundColor="#2E2E2E"
+                       CornerRadius="10"
+                       Padding="15">
+                    <HorizontalStackLayout Spacing="15">
+                        <!-- Imagen o círculo para el perfil -->
+                        <Frame WidthRequest="60"
+                               HeightRequest="60"
+                               CornerRadius="30"
+                               BackgroundColor="Black"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start">
+                            <!--
+                              Puedes poner un <Image Source="profile.png" ... />
+                              o usar un BoxView con color si no tienes la imagen.
+                            -->
+                        </Frame>
+
+                        <!-- Información del perfil -->
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Label x:Name="LabelNombreUsuario"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#FFFFFF"/>        
+
+                            <Label Text="Editar información"
+                                   FontSize="14"
+                                   TextColor="#CCCCCC"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <!-- SECCIÓN APLICACIÓN -->
+                <Label Text="Aplicación"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="#EEEEEE" />
+
+                <!-- Notificaciones -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="15">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Notificaciones"
+                               FontSize="16"
+                               TextColor="#444444"
+                               VerticalOptions="Center"
+                               Grid.Column="0"/>
+                        <Switch x:Name="SwitchNotificaciones"
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Privacidad -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="15">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Privacidad"
+                               FontSize="16"
+                               TextColor="#444444"
+                               VerticalOptions="Center"
+                               Grid.Column="0"/>
+                        <!-- Flecha u otra indicación para navegar -->
+                        <Image Source="arrow.png"
+                               WidthRequest="24"
+                               HeightRequest="24"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               Grid.Column="1"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Idioma -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="15">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Idioma"
+                               FontSize="16"
+                               TextColor="#444444"
+                               VerticalOptions="Center"
+                               Grid.Column="0"/>
+                        <Image Source="arrow.png"
+                               WidthRequest="24"
+                               HeightRequest="24"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               Grid.Column="1"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Tema -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="15">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Tema"
+                               FontSize="16"
+                               TextColor="#444444"
+                               VerticalOptions="Center"
+                               Grid.Column="0"/>
+                        <Image Source="arrow.png"
+                               WidthRequest="24"
+                               HeightRequest="24"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               Grid.Column="1"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Botón Cerrar sesión -->
+                <Button Text="Cerrar sesión"
+                        TextColor="#FFFFFF"
+                        BackgroundColor="#E53E3E"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="OnCerrarSesionClicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,*,*,*"
+              Padding="10"
+              BackgroundColor="#2E2E2E">
+            <Button x:Name="BtnDashboard"
+                    Grid.Column="0"
+                    Text="Dashboard"
+                    TextColor="White"
+                    Clicked="OnDashboardClicked"/>
+            <Button x:Name="BtnEntrenamiento"
+                    Grid.Column="1"
+                    Text="Entrenamiento"
+                    TextColor="White"
+                    Clicked="OnEntrenamientoClicked"/>
+            <Button x:Name="BtnNutricion"
+                    Grid.Column="2"
+                    Text="Nutrición"
+                    TextColor="White"
+                    Clicked="OnNutricionClicked"/>
+            <Button x:Name="BtnChat"
+                    Grid.Column="3"
+                    Text="Chat"
+                    TextColor="White"
+                    Clicked="OnChatClicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>

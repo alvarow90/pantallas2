@@ -3,32 +3,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:pantallas"
-    Shell.FlyoutBehavior="Disabled"
-    Title="pantallas">
-
-    <!-- Ruta oculta -->
-    <ShellContent
-        Route="AuthPage"
-        ContentTemplate="{DataTemplate local:AuthPage}" />
+    Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
         <ShellContent
-            Title="Nutrición"
-            Icon="🥗"
-            ContentTemplate="{DataTemplate local:Nutricion}"
-            Route="Nutricion" />
-
-        <ShellContent
             Title="Dashboard"
-            Icon="📊"
             ContentTemplate="{DataTemplate local:Dashboard}"
             Route="Dashboard" />
 
         <ShellContent
-            Title="DS"
-            Icon="📁"
-            ContentTemplate="{DataTemplate local:DS}"
-            Route="DS" />
+            Title="Entrenamiento"
+            ContentTemplate="{DataTemplate local:Entrenador}" 
+            Route="Entrenamiento" />
+
+        <ShellContent
+            Title="Nutrición"
+            ContentTemplate="{DataTemplate local:Nutricion}"
+            Route="Nutricion" />
+
+        <ShellContent
+            Title="Chat"
+            ContentTemplate="{DataTemplate local:Chat}"
+            Route="Chat" />
+
+        <ShellContent
+          Title="Ajustes"
+          ContentTemplate="{DataTemplate local:Ajustes}"
+          Route="Ajustes" />
+
+
+
     </TabBar>
 </Shell>
 
