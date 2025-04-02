@@ -1,0 +1,210 @@
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="pantallas.AsignarNutriologo"
+    BackgroundColor="#1E1E1E"
+    Padding="20">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <!-- CONTENIDO PRINCIPAL: scrollable -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Sección "Nutriologo" -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="0,10">
+                    <Grid ColumnDefinitions="Auto, *, Auto"
+                          ColumnSpacing="10"
+                          VerticalOptions="Center">
+                        <Frame CornerRadius="40"
+                               BorderColor="Transparent"
+                               HeightRequest="80"
+                               WidthRequest="80"
+                               Padding="0"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                            <Image Source="nutriologa.jpg"/>
+                        </Frame>
+                        <VerticalStackLayout Grid.Column="1"
+                                             Spacing="2"
+                                             VerticalOptions="Center">
+                            <Label Text="Nutrióloga"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   TextColor="#444444" />
+                            <Label Text="Licenciada Maria Estefania Juarez Aramburu"
+                                   TextColor="#444444" />
+                        </VerticalStackLayout>
+                        <Button Text="Editar Nutriólogo"
+                                BackgroundColor="#FF6B3D"
+                                TextColor="White"
+                                CornerRadius="5"
+                                Grid.Column="2"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"/>
+                    </Grid>
+                </Frame>
+
+                <!-- Más nutriólogos -->
+                <Frame BackgroundColor="#DDDDDD"
+                       CornerRadius="10"
+                       Padding="10"
+                       Margin="0,20">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="Más nutriólogos"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="Black" />
+
+                        <!-- Línea separadora -->
+                        <BoxView HeightRequest="1"
+                                 Color="Black"
+                                 HorizontalOptions="FillAndExpand" />
+
+                        <!-- Lista de nutriólogos -->
+                        <VerticalStackLayout Spacing="15">
+
+                            <!-- Nutriólogo 1 -->
+                            <Grid ColumnDefinitions="Auto, *, Auto"
+                                  ColumnSpacing="10"
+                                  VerticalOptions="Center">
+                                <Frame CornerRadius="40"
+                                       BackgroundColor="Black"
+                                       HeightRequest="40"
+                                       WidthRequest="40"
+                                       Padding="0"
+                                       HasShadow="False"
+                                       VerticalOptions="Center" />
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="2"
+                                                     VerticalOptions="Center">
+                                    <Label Text="Jaime Mausan"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="Black" />
+                                    <Label Text="Especialista en pilates"
+                                           FontSize="13"
+                                           TextColor="Black" />
+                                </VerticalStackLayout>
+                                <Button Text="Solicitar"
+                                        Grid.Column="2"
+                                        BackgroundColor="#FF6B3D"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        VerticalOptions="Center"
+                                        WidthRequest="90"/>
+                            </Grid>
+
+                            <!-- Nutriólogo 2 -->
+                            <Grid ColumnDefinitions="Auto, *, Auto"
+                                  ColumnSpacing="10"
+                                  VerticalOptions="Center">
+                                <Frame CornerRadius="40"
+                                       BackgroundColor="Black"
+                                       HeightRequest="40"
+                                       WidthRequest="40"
+                                       Padding="0"
+                                       HasShadow="False"
+                                       VerticalOptions="Center" />
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="2"
+                                                     VerticalOptions="Center">
+                                    <Label Text="Ana López"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="Black" />
+                                    <Label Text="Especialista en nutrición deportiva"
+                                           FontSize="13"
+                                           TextColor="Black" />
+                                </VerticalStackLayout>
+                                <Button Text="Solicitar"
+                                        Grid.Column="2"
+                                        BackgroundColor="#FF6B3D"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        VerticalOptions="Center"
+                                        WidthRequest="90"/>
+                            </Grid>
+
+                            <!-- Nutriólogo 3 -->
+                            <Grid ColumnDefinitions="Auto, *, Auto"
+                                  ColumnSpacing="10"
+                                  VerticalOptions="Center">
+                                <Frame CornerRadius="40"
+                                       BackgroundColor="Black"
+                                       HeightRequest="40"
+                                       WidthRequest="40"
+                                       Padding="0"
+                                       HasShadow="False"
+                                       VerticalOptions="Center" />
+                                <VerticalStackLayout Grid.Column="1"
+                                                     Spacing="2"
+                                                     VerticalOptions="Center">
+                                    <Label Text="Carlos Rivera"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="Black" />
+                                    <Label Text="Especialista en obesidad"
+                                           FontSize="13"
+                                           TextColor="Black" />
+                                </VerticalStackLayout>
+                                <Button Text="Solicitar"
+                                        Grid.Column="2"
+                                        BackgroundColor="#FF6B3D"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        VerticalOptions="Center"
+                                        WidthRequest="90"/>
+                            </Grid>
+
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- BARRA DE NAVEGACIÓN: fija en la parte inferior -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,*,*,*"
+              Padding="10"
+              BackgroundColor="#2E2E2E"
+              HorizontalOptions="FillAndExpand">
+            <Button x:Name="BtnDashboard"
+                    Grid.Column="0"
+                    Text="Dashboard"
+                    BackgroundColor="#800080"
+                    TextColor="White"
+                    Clicked="OnDashboardClicked"
+                    CornerRadius="5"/>
+            <Button x:Name="BtnEntrenamiento"
+                    Grid.Column="1"
+                    Text="Entrenamiento"
+                    BackgroundColor="#800080"
+                    TextColor="White"
+                    Clicked="OnEntrenamientoClicked"
+                    CornerRadius="5"/>
+            <Button x:Name="BtnNutricion"
+                    Grid.Column="2"
+                    Text="Nutrición"
+                    BackgroundColor="#800080"
+                    TextColor="White"
+                    Clicked="OnNutricionClicked"
+                    CornerRadius="5"/>
+            <Button x:Name="BtnChat"
+                    Grid.Column="3"
+                    Text="Chat"
+                    BackgroundColor="#800080"
+                    TextColor="White"
+                    Clicked="OnChatClicked"
+                    CornerRadius="5"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>
+

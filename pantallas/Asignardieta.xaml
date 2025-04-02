@@ -1,0 +1,239 @@
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="pantallas.Asignardieta"
+    BackgroundColor="#1E1E1E"
+    Padding="20">
+
+    <!-- Grid principal con dos filas: Título y Contenido -->
+    <Grid RowDefinitions="Auto, *">
+
+        <!-- Título centrado -->
+        <Label Text="Asignar dieta"
+           FontSize="24"
+           FontAttributes="Bold"
+           TextColor="#800080"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Grid.Row="0"
+           Margin="0,0,0,10"/>
+
+        <!-- Contenido scrollable en la fila 1 -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20" 
+                           HorizontalOptions="Center" 
+                           WidthRequest="600">
+                <Frame BackgroundColor="#EEEEEE"
+               CornerRadius="10"
+               Padding="10"
+               HorizontalOptions="Center"
+               Margin="0,10"
+               WidthRequest="600">
+                    <VerticalStackLayout Spacing="10">
+                        <!-- Header "Mis usuarios" -->
+                        <Label Text="Mis usuarios"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   TextColor="#444444"
+                   HorizontalOptions="Center"/>
+                        <!-- Línea divisoria -->
+                        <BoxView HeightRequest="1"
+                     Color="Black"
+                     Margin="0,5"/>
+                        <!-- Grid de usuarios: 3 filas x 3 columnas -->
+                        <Grid RowDefinitions="Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,*,Auto"
+                  ColumnSpacing="10"
+                  RowSpacing="10"
+                  Margin="0,10,0,0">
+                            <!-- Usuario 1 -->
+                            <Frame Grid.Row="0" Grid.Column="0"
+                     CornerRadius="30"
+                     HeightRequest="60"
+                     WidthRequest="60"
+                     Padding="0"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     BorderColor="Transparent">
+                                <Image Source="profile.png"
+                       Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Grid.Row="0" Grid.Column="1"
+                     Text="Anton Betak"
+                     TextColor="#444444"
+                     FontAttributes="Bold"
+                     VerticalOptions="Center"
+                     FontSize="16"/>
+                            <Button Grid.Row="0" Grid.Column="2"
+                      Text="Editar dieta"
+                      BackgroundColor="#FF6B3D"
+                      TextColor="White"
+                      CornerRadius="5"
+                      HorizontalOptions="End"
+                      VerticalOptions="Center"/>
+
+                            <!-- Usuario 2 -->
+                            <Frame Grid.Row="1" Grid.Column="0"
+                     CornerRadius="30"
+                     HeightRequest="60"
+                     WidthRequest="60"
+                     Padding="0"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     BorderColor="Transparent">
+                                <Image Source="profile.png"
+                       Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Grid.Row="1" Grid.Column="1"
+                     Text="Roberto Villegas"
+                     TextColor="#444444"
+                     FontAttributes="Bold"
+                     VerticalOptions="Center"
+                     FontSize="16"/>
+                            <Button Grid.Row="1" Grid.Column="2"
+                      Text="Editar dieta"
+                      BackgroundColor="#FF6B3D"
+                      TextColor="White"
+                      CornerRadius="5"
+                      HorizontalOptions="End"
+                      VerticalOptions="Center"/>
+
+                            <!-- Usuario 3 -->
+                            <Frame Grid.Row="2" Grid.Column="0"
+                     CornerRadius="30"
+                     HeightRequest="60"
+                     WidthRequest="60"
+                     Padding="0"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     BorderColor="Transparent">
+                                <Image Source="profile.png"
+                       Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Grid.Row="2" Grid.Column="1"
+                     Text="Ernesto Rosas"
+                     TextColor="#444444"
+                     FontAttributes="Bold"
+                     VerticalOptions="Center"
+                     FontSize="16"/>
+                            <Button Grid.Row="2" Grid.Column="2"
+                      Text="Editar dieta"
+                      BackgroundColor="#FF6B3D"
+                      TextColor="White"
+                      CornerRadius="5"
+                      HorizontalOptions="End"
+                      VerticalOptions="Center"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Frame para el formulario: AÑADIR PLAN DE ALIMENTACIÓN -->
+                <Frame BackgroundColor="#EEEEEE"
+               CornerRadius="10"
+               Padding="10"
+               HorizontalOptions="Center"
+               Margin="0,10"
+               WidthRequest="600">
+                    <VerticalStackLayout Spacing="15">
+                        <!-- Título y línea divisoria -->
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                            <Label Text="Añadir Plan de Alimentación"
+                     FontSize="24"
+                     FontAttributes="Bold"
+                     TextColor="#FFFFFF"
+                     HorizontalOptions="Center" />
+                            <BoxView HeightRequest="1"
+                       Color="White"
+                       HorizontalOptions="FillAndExpand" />
+                        </VerticalStackLayout>
+                        <!-- Pickers -->
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="FillAndExpand">
+                            <Picker x:Name="PickerUsuario"
+                      Title="Usuario"
+                      HorizontalOptions="StartAndExpand" />
+                            <Picker x:Name="PickerComida"
+                      Title="Comida"
+                      HorizontalOptions="StartAndExpand" />
+                        </HorizontalStackLayout>
+                        <!-- Tres Entries para cantidades -->
+                        <Grid ColumnDefinitions="*,*,*"
+                  ColumnSpacing="10"
+                  HorizontalOptions="FillAndExpand">
+                            <!-- Cantidad de grasas -->
+                            <VerticalStackLayout Grid.Column="0"
+                                   HorizontalOptions="Center"
+                                   Spacing="5">
+                                <Label Text="Cantidad grasas"
+                       FontAttributes="Bold"
+                       TextColor="#444444" />
+                                <Entry x:Name="EntryGrasas"
+                       Placeholder="Ej: 10g"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                            <!-- Cantidad de proteínas -->
+                            <VerticalStackLayout Grid.Column="1"
+                                   HorizontalOptions="Center"
+                                   Spacing="5">
+                                <Label Text="Cantidad proteínas"
+                       FontAttributes="Bold"
+                       TextColor="#444444" />
+                                <Entry x:Name="EntryProteinas"
+                       Placeholder="Ej: 70g"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                            <!-- Cantidad de carbohidratos -->
+                            <VerticalStackLayout Grid.Column="2"
+                                   HorizontalOptions="Center"
+                                   Spacing="5">
+                                <Label Text="Cantidad carbohidratos"
+                       FontAttributes="Bold"
+                       TextColor="#444444" />
+                                <Entry x:Name="EntryCarbohidratos"
+                       Placeholder="Ej: 120g"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Grid>
+                        <!-- Nombre de la comida -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Nombre de la comida"
+                     FontAttributes="Bold"
+                     TextColor="#444444" />
+                            <Entry x:Name="EntryNombreComida"
+                     Placeholder="Ej: Huevos con jamón"
+                     HorizontalOptions="FillAndExpand" />
+                        </VerticalStackLayout>
+                        <!-- Botón Añadir comida -->
+                        <Button Text="Añadir comida"
+                    BackgroundColor="#FF6B3D"
+                    TextColor="White"
+                    CornerRadius="5"
+                    HorizontalOptions="Center" />
+                        <!-- Labels con información previa -->
+                        <Label Text="90/90g Proteína - 120/120g Carbohidratos - 10/10g Grasas Bistec con Papas"
+                   TextColor="#444444"
+                   FontAttributes="Bold" />
+                        <Label Text="90/90g Proteína - 120/120g Carbohidratos - 10/10g Grasas Arroz con Huevo"
+                   TextColor="#444444"
+                   FontAttributes="Bold" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,*,*,*"
+                      Padding="10"
+                      BackgroundColor="#2E2E2E"
+                      HorizontalOptions="FillAndExpand">
+                    <Button x:Name="BtnDashboard" Grid.Column="0" Text="Dashboard" Clicked="OnDashboardClicked" TextColor="White"/>
+                    <Button x:Name="BtnEntrenamiento" Grid.Column="1" Text="Entrenamiento" Clicked="OnEntrenamientoClicked"  TextColor="White"/>
+                    <Button x:Name="BtnNutricion" Grid.Column="2" Text="Nutrición" Clicked="OnNutricionClicked" TextColor="White"/>
+                    <Button x:Name="BtnChat" Grid.Column="3" Text="Chat" Clicked="OnChatClicked" TextColor="White" />
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
+
+
+

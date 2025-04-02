@@ -16,31 +16,14 @@ namespace pantallas
 
         public App()
         {
-            InitializeComponent();
 
-            // Ruta local de la base de datos
-            string rutaDB = Path.Combine(FileSystem.AppDataDirectory, "usuarios.db");
+string rutaDB = Path.Combine(FileSystem.AppDataDirectory, "usuarios.db");
 
-            // Inicializa el servicio de base de datos
-            BaseDeDatos = new DatabaseService(rutaDB);
+// Inicializa el servicio de base de datos
+BaseDeDatos = new DatabaseService(rutaDB);
 
-            // Establece la página principal: pantalla de autenticación
-            MainPage = new AuthPage(); // Se cambiará a AppShell() al iniciar sesión
-        }
-
-        protected override void OnStart()
-        {
-            // Aquí puedes poner lógica adicional al iniciar
-        }
-
-        protected override void OnSleep()
-        {
-            // Aquí puedes guardar datos o liberar recursos
-        }
-
-        protected override void OnResume()
-        {
-            // Lógica al reanudar la app
+// Establece la página principal: pantalla de autenticación
+MainPage = new NavigationPage(new AuthPage()); // Mostrar primero la pantalla de Login
         }
     }
 }

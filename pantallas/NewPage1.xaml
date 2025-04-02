@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="pantallas.NewPage1"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#1E1E1E"
+    Padding="20">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- BARRA SUPERIOR -->
+        <Grid Grid.Row="0" Padding="20,0" ColumnDefinitions="Auto,*">
+            <ImageButton Source="backarrow.png"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Center"
+                         Clicked="OnBackClicked"
+                         Grid.Column="0"/>
+            <Label Text="Entrenamiento"
+                   Margin="20,0,0,0"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#800080"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1" />
+        </Grid>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
+                <Label Text="Rutina Pecho"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#444444" />
+
+                <!-- EJERCICIO 1: Se agrega GestureRecognizer para navegar -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       Margin="0,10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFirstExerciseTapped"/>
+                    </Frame.GestureRecognizers>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="Press de banca con barra"
+                                   FontAttributes="Bold"
+                                   TextColor="#444444"/>
+                            <Label Text="4 series x 8 repeticiones"
+                                   FontSize="14"
+                                   TextColor="#444444"/>
+                        </VerticalStackLayout>
+                        <BoxView x:Name="check1"
+                                 Grid.Column="1"
+                                 Color="Black"
+                                 WidthRequest="20"
+                                 HeightRequest="20"
+                                 CornerRadius="10"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="End">
+                            <BoxView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCheckTapped"/>
+                            </BoxView.GestureRecognizers>
+                        </BoxView>
+                    </Grid>
+                </Frame>
+
+                <!-- Ejercicio 2 -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       Margin="0,10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="Press inclinado con mancuernas"
+                                   FontAttributes="Bold"
+                                   TextColor="#444444"/>
+                            <Label Text="4 series x 10 repeticiones"
+                                   FontSize="14"
+                                   TextColor="#444444"/>
+                        </VerticalStackLayout>
+                        <BoxView x:Name="check2"
+                                 Grid.Column="1"
+                                 Color="Black"
+                                 WidthRequest="20"
+                                 HeightRequest="20"
+                                 CornerRadius="10"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="End">
+                            <BoxView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCheckTapped"/>
+                            </BoxView.GestureRecognizers>
+                        </BoxView>
+                    </Grid>
+                </Frame>
+
+                <!-- Ejercicio 3 -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       Margin="0,10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="Press inclinado con mancuernas"
+                                   FontAttributes="Bold"
+                                   TextColor="#444444"/>
+                            <Label Text="4 series x 10 repeticiones"
+                                   FontSize="14"
+                                   TextColor="#444444"/>
+                        </VerticalStackLayout>
+                        <BoxView x:Name="check3"
+                                 Grid.Column="1"
+                                 Color="Black"
+                                 WidthRequest="20"
+                                 HeightRequest="20"
+                                 CornerRadius="10"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="End">
+                            <BoxView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCheckTapped"/>
+                            </BoxView.GestureRecognizers>
+                        </BoxView>
+                    </Grid>
+                </Frame>
+
+                <!-- Ejercicio 4 -->
+                <Frame BackgroundColor="#EEEEEE"
+                       CornerRadius="10"
+                       Padding="10"
+                       Margin="0,10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="Press declinado con barra"
+                                   FontAttributes="Bold"
+                                   TextColor="#444444"/>
+                            <Label Text="4 series x 8 repeticiones"
+                                   FontSize="14"
+                                   TextColor="#444444"/>
+                        </VerticalStackLayout>
+                        <BoxView x:Name="check4"
+                                 Grid.Column="1"
+                                 Color="Black"
+                                 WidthRequest="20"
+                                 HeightRequest="20"
+                                 CornerRadius="10"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="End">
+                            <BoxView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCheckTapped"/>
+                            </BoxView.GestureRecognizers>
+                        </BoxView>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,*,*,*"
+              Padding="10"
+              BackgroundColor="#2E2E2E">
+            <Button x:Name="BtnDashboard"
+                    Grid.Column="0"
+                    Text="Dashboard"
+                    TextColor="White"
+                    Clicked="OnDashboardClicked"/>
+            <Button x:Name="BtnEntrenamiento"
+                    Grid.Column="1"
+                    Text="Entrenamiento"
+                    TextColor="White"
+                    Clicked="OnEntrenamientoClicked"/>
+            <Button x:Name="BtnNutricion"
+                    Grid.Column="2"
+                    Text="Nutrición"
+                    TextColor="White"
+                    Clicked="OnNutricionClicked"/>
+            <Button x:Name="BtnChat"
+                    Grid.Column="3"
+                    Text="Chat"
+                    TextColor="White"
+                    Clicked="OnChatClicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>
+

@@ -62,6 +62,7 @@
                                 TextColor="White"
                                 CornerRadius="5"
                                 Grid.Column="2"
+                                Clicked="Button_Clicked"
                                 VerticalOptions="Center"
                                 HorizontalOptions="End"/>
                     </Grid>
