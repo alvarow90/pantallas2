@@ -26,5 +26,12 @@ namespace pantallas
         {
             await Shell.Current.GoToAsync("//Chat");
         }
+
+        private async void OnAjustesClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Ajustes");
+           
+
+        }
     }
 }

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="pantallas.RecuperarContrasenaPage"
@@ -5,18 +6,49 @@
              BackgroundColor="White"
              Padding="30">
 
-    <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" VerticalOptions="CenterAndExpand">
 
-        <Label Text="Recuperar contraseña" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label Text="Recuperar contraseña"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
 
-        <Label Text="Ingresa tu correo electrónico registrado y te enviaremos instrucciones para recuperar tu contraseña." 
-               FontSize="14" TextColor="Gray" />
+            <Label Text="Ingresa tu correo electrónico registrado y te enviaremos instrucciones para recuperar tu contraseña." 
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
 
-        <Entry x:Name="EmailRecoveryEntry" Placeholder="Correo electrónico" Keyboard="Email" />
+            <!-- Campo de entrada estilizado -->
+            <Frame CornerRadius="10"
+                   Padding="10"
+                   BackgroundColor="#F2F2F2"
+                   HasShadow="False">
 
-        <Button Text="Enviar instrucciones" Clicked="OnEnviarClicked" BackgroundColor="#800080" TextColor="White" />
+                <Entry x:Name="EmailRecoveryEntry"
+                       Placeholder="Correo electrónico"
+                       Keyboard="Email"
+                       BackgroundColor="Transparent"
+                       FontSize="14" />
+            </Frame>
 
-        <Label x:Name="RecoveryMessageLabel" FontAttributes="Bold" TextColor="Green" HorizontalOptions="Center" />
+            <Button Text="Enviar instrucciones"
+                    Clicked="OnEnviarClicked"
+                    BackgroundColor="#800080"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="50" />
 
-    </VerticalStackLayout>
+            <Label x:Name="RecoveryMessageLabel"
+                   FontAttributes="Bold"
+                   TextColor="Green"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

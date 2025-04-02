@@ -1,91 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="pantallas.AuthPage"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             Title="Autenticación">
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-        <!-- Imagen y mensaje superior -->
-        <Image Source="placeholder.png" HeightRequest="120" HorizontalOptions="Center"/>
-        <Label Text="Somos más que un GYM" HorizontalOptions="Center" FontSize="18" TextColor="#666"/>
+            <!-- Imagen y mensaje superior -->
+            <Image Source="placeholder.png" HeightRequest="120" HorizontalOptions="Center"/>
+            <Label Text="Somos más que un GYM"
+                   HorizontalOptions="Center"
+                   FontSize="18"
+                   TextColor="#666"/>
 
-        <!-- Botones pestaña -->
-        <Frame CornerRadius="10" Padding="0" BackgroundColor="#E0E0E0">
-            <Grid ColumnDefinitions="*,*" Padding="5">
+            <!-- Botones pestaña -->
+            <Frame CornerRadius="10" Padding="0" BackgroundColor="#E0E0E0">
+                <Grid ColumnDefinitions="*,*" Padding="5">
+                    <Button Text="Ingresar"
+                            Clicked="OnLoginTabClicked"
+                            x:Name="LoginTabButton"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            CornerRadius="10"
+                            Grid.Column="0"/>
+                    <Button Text="Crear cuenta"
+                            Clicked="OnRegisterTabClicked"
+                            x:Name="RegisterTabButton"
+                            BackgroundColor="Transparent"
+                            TextColor="Gray"
+                            CornerRadius="10"
+                            Grid.Column="1"/>
+                </Grid>
+            </Frame>
+
+            <!-- Login -->
+            <StackLayout x:Name="LoginForm" Spacing="10">
+                <Entry x:Name="LoginEmailEntry" Placeholder="Correo electrónico" Keyboard="Email" />
+                <Entry x:Name="LoginPasswordEntry" Placeholder="Contraseña" IsPassword="True" />
+
                 <Button Text="Ingresar"
-                        Clicked="OnLoginTabClicked"
-                        x:Name="LoginTabButton"
+                        BackgroundColor="#800080"
+                        TextColor="White"
+                        Clicked="OnLoginClicked" />
+
+                <Button Text="Iniciar sesión con Google"
                         BackgroundColor="White"
                         TextColor="Black"
-                        CornerRadius="10"
-                        Grid.Column="0"/>
-                <Button Text="Crear cuenta"
-                        Clicked="OnRegisterTabClicked"
-                        x:Name="RegisterTabButton"
-                        BackgroundColor="Transparent"
-                        TextColor="Gray"
-                        CornerRadius="10"
-                        Grid.Column="1"/>
-            </Grid>
-        </Frame>
+                        BorderColor="Gray"
+                        BorderWidth="1"
+                        CornerRadius="8"
+                        FontAttributes="Bold" />
 
+                <Label Text="Olvidé la contraseña"
+                       HorizontalOptions="Center"
+                       FontSize="12"
+                       TextColor="Gray">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
 
-        <!-- Login -->
-        <StackLayout x:Name="LoginForm" Spacing="10">
-            <Entry x:Name="LoginEmailEntry" Placeholder="Correo electrónico" />
-            <Entry x:Name="LoginPasswordEntry" Placeholder="Contraseña" IsPassword="True" />
+            <!-- Registro -->
+            <StackLayout x:Name="RegisterForm" Spacing="10" IsVisible="False">
+                <Entry x:Name="NameEntry" Placeholder="Nombre completo" />
+                <Entry x:Name="EmailEntry" Placeholder="Correo electrónico" Keyboard="Email" />
+                <Picker x:Name="RolePicker" Title="Selecciona tu rol">
+                    <Picker.Items>
+                        <x:String>Usuario</x:String>
+                        <x:String>Nutriólogo</x:String>
+                        <x:String>Entrenador</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True"/>
+                <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirmar contraseña" IsPassword="True"/>
+                <Button Text="Registrarse"
+                        BackgroundColor="#FF6B3D"
+                        TextColor="White"
+                        Clicked="OnRegisterClicked"/>
+                <Label x:Name="RegisterMessageLabel"
+                       FontAttributes="Bold"
+                       TextColor="Red"
+                       HorizontalOptions="Center" />
+            </StackLayout>
 
-            <Button Text="Ingresar"
-            BackgroundColor="#800080"
-            TextColor="White"
-            Clicked="OnLoginClicked" />
-            <!-- 👈 importante -->
-
-            <!-- Botón Iniciar con Google -->
-            <Button Text="Iniciar sesión con Google"
-            BackgroundColor="White"
-            TextColor="Black"
-            BorderColor="Gray"
-            BorderWidth="1"
-            CornerRadius="8"
-            FontAttributes="Bold" />
-
-            <Label Text="Olvidé la contraseña"
-           HorizontalOptions="Center"
-           FontSize="12"
-           TextColor="Gray">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
-                </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
-
-
-
-
-        <!-- Registro -->
-        <StackLayout x:Name="RegisterForm" Spacing="10" IsVisible="False">
-            <Entry x:Name="NameEntry" Placeholder="Nombre completo" />
-            <Entry x:Name="EmailEntry" Placeholder="Correo electrónico" />
-            <Picker x:Name="RolePicker" Title="Selecciona tu rol">
-                <Picker.Items>
-                    <x:String>Usuario</x:String>
-                    <x:String>Nutriólogo</x:String>
-                    <x:String>Entrenador</x:String>
-                </Picker.Items>
-            </Picker>
-            <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True"/>
-            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirmar contraseña" IsPassword="True"/>
-            <Button Text="Registrarse"
-            BackgroundColor="#FF6B3D"
-            TextColor="White"
-            Clicked="OnRegisterClicked"/>
-            <Label x:Name="RegisterMessageLabel"
-           FontAttributes="Bold"
-           TextColor="Red"
-           HorizontalOptions="Center" />
-        </StackLayout>
-
-
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

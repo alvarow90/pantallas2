@@ -8,14 +8,13 @@ namespace pantallas.Models
         public int Id { get; set; }
 
         [MaxLength(100)]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = "";
 
         [MaxLength(100), Unique]
-        public string Correo { get; set; }
+        public string Correo { get; set; } = "";
 
-        public string Contraseña { get; set; }
+        public string Contraseña { get; set; } = "";
 
-        public string Rol { get; set; }
+        public string Rol { get; set; } = "";
     }
 }
-

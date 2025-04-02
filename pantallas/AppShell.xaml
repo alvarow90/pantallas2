@@ -25,5 +25,13 @@
             Title="Chat"
             ContentTemplate="{DataTemplate local:Chat}"
             Route="Chat" />
+
+        <ShellContent
+          Title="Ajustes"
+          ContentTemplate="{DataTemplate local:Ajustes}"
+          Route="Ajustes" />
+
+
+
     </TabBar>
 </Shell>
