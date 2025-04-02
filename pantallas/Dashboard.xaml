@@ -5,11 +5,10 @@
     BackgroundColor="#1E1E1E"
     Padding="20">
 
-    <Grid RowDefinitions="Auto, *, Auto">
-        <!-- BARRA SUPERIOR: fija en la parte superior -->
-        <Grid Grid.Row="0"
-              Padding="20,0"
-              ColumnDefinitions="Auto, *">
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- BARRA SUPERIOR -->
+        <Grid Grid.Row="0" Padding="20,0" ColumnDefinitions="Auto,*">
             <ImageButton Source="backarrow.png"
                          WidthRequest="40"
                          HeightRequest="40"
@@ -26,10 +25,20 @@
                    Grid.Column="1" />
         </Grid>
 
-        <!-- CONTENIDO PRINCIPAL: scrollable -->
+        <!-- CONTENIDO PRINCIPAL -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Spacing="20">
-                <!-- Sección "Resumen de Progreso" -->
+
+                <!-- SALUDO AL USUARIO -->
+                <Label x:Name="LabelBienvenida"
+                       Text="Hola, usuario"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       Margin="0,10"/>
+
+                <!-- RESUMEN DE PROGRESO -->
                 <Frame BackgroundColor="#EEEEEE"
                        CornerRadius="10"
                        Padding="10"
@@ -40,38 +49,21 @@
                                FontAttributes="Bold"
                                FontSize="18"
                                TextColor="#444444" />
-                        <BoxView HeightRequest="1"
-                                 Color="Black"
-                                 Margin="0,5"/>
-                        <Grid ColumnDefinitions="*,*"
-                              ColumnSpacing="20">
-                            <!-- Columna 0: Imagen "semana" y Label -->
-                            <VerticalStackLayout Grid.Column="0"
-                                                 Spacing="5"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-                                <Image Source="semana.png"
-                                       HeightRequest="80"
-                                       Aspect="AspectFit"/>
-                                <Label Text="Llevas el 60% de tus rutinas semanales"
-                                       TextColor="#444444" />
+                        <BoxView HeightRequest="1" Color="Black" Margin="0,5"/>
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                            <VerticalStackLayout Grid.Column="0" Spacing="5" HorizontalOptions="Center">
+                                <Image Source="semana.png" HeightRequest="80" Aspect="AspectFit"/>
+                                <Label Text="Llevas el 60% de tus rutinas semanales" TextColor="#444444" />
                             </VerticalStackLayout>
-                            <!-- Columna 1: Imagen "mes" y Label -->
-                            <VerticalStackLayout Grid.Column="1"
-                                                 Spacing="5"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-                                <Image Source="mes.png"
-                                       HeightRequest="80"
-                                       Aspect="AspectFit"/>
-                                <Label Text="Llevas el 75% de tu objetivo mensual de rutinas completado"
-                                       TextColor="#444444" />
+                            <VerticalStackLayout Grid.Column="1" Spacing="5" HorizontalOptions="Center">
+                                <Image Source="mes.png" HeightRequest="80" Aspect="AspectFit"/>
+                                <Label Text="Llevas el 75% de tu objetivo mensual de rutinas completado" TextColor="#444444" />
                             </VerticalStackLayout>
                         </Grid>
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- Sección "Entrenamiento" -->
+                <!-- ENTRENAMIENTO -->
                 <Frame BackgroundColor="#EEEEEE"
                        CornerRadius="10"
                        Padding="10"
@@ -82,46 +74,20 @@
                                FontAttributes="Bold"
                                FontSize="18"
                                TextColor="#444444" />
-                        <BoxView HeightRequest="1"
-                                 Color="Black"
-                                 Margin="0,5"/>
-                        <Grid ColumnDefinitions="*,*,*"
-                              ColumnSpacing="20">
-                            <!-- Columna 0: Imagen "pecho" y Label -->
-                            <VerticalStackLayout Grid.Column="0"
-                                                 Spacing="5"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-                                <Image Source="pecho.png"
-                                       HeightRequest="80"
-                                       Aspect="AspectFit"/>
-                                <Label Text="Hoy toca rutina de pecho"
-                                       TextColor="#444444" />
+                        <BoxView HeightRequest="1" Color="Black" Margin="0,5"/>
+                        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="20">
+                            <VerticalStackLayout Grid.Column="0" Spacing="5" HorizontalOptions="Center">
+                                <Image Source="pecho.png" HeightRequest="80" Aspect="AspectFit"/>
+                                <Label Text="Hoy toca rutina de pecho" TextColor="#444444" />
                             </VerticalStackLayout>
-                            <!-- Columna 1: Mensaje del coach -->
-                            <VerticalStackLayout Grid.Column="1"
-                                                 Spacing="5"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-                                <Frame CornerRadius="40"
-                                       BorderColor="Transparent"
-                                       HeightRequest="80"
-                                       WidthRequest="80"
-                                       Padding="0"
-                                       HorizontalOptions="Center">
+                            <VerticalStackLayout Grid.Column="1" Spacing="5" HorizontalOptions="Center">
+                                <Frame CornerRadius="40" BorderColor="Transparent" HeightRequest="80" WidthRequest="80" Padding="0">
                                     <Image Source="vladi.jpg" Aspect="AspectFill"/>
                                 </Frame>
-                                <Label Text="Héctor Morales"
-                                       HorizontalOptions="Center"
-                                       FontAttributes="Bold"
-                                       TextColor="#444444"/>
-                                <Label Text="Estoy atento por si tienes dudas · 8h"
-                                       TextColor="#444444"/>
+                                <Label Text="Héctor Morales" FontAttributes="Bold" TextColor="#444444" HorizontalOptions="Center"/>
+                                <Label Text="Estoy atento por si tienes dudas · 8h" TextColor="#444444"/>
                             </VerticalStackLayout>
-                            <!-- Columna 2: Botón "Completar tarea" -->
-                            <VerticalStackLayout Grid.Column="2"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
+                            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
                                 <Button Text="Completar tarea"
                                         BackgroundColor="#FF6B3D"
                                         TextColor="White"
@@ -131,7 +97,7 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <!-- Sección "Dieta" -->
+                <!-- DIETA -->
                 <Frame BackgroundColor="#EEEEEE"
                        CornerRadius="10"
                        Padding="10"
@@ -142,45 +108,20 @@
                                FontAttributes="Bold"
                                FontSize="18"
                                TextColor="#444444" />
-                        <BoxView HeightRequest="1"
-                                 Color="Black"
-                                 Margin="0,5"/>
-                        <Grid ColumnDefinitions="*,*,*"
-                              ColumnSpacing="20">
-                            <!-- Columna 0: Imagen "dieta" y Label -->
-                            <VerticalStackLayout Grid.Column="0"
-                                                 Spacing="5"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-                                <Image Source="dieta.jpg"
-                                       HeightRequest="80"
-                                       Aspect="AspectFit"/>
-                                <Label Text="Dieta de volumen"
-                                       TextColor="#444444" />
+                        <BoxView HeightRequest="1" Color="Black" Margin="0,5"/>
+                        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="20">
+                            <VerticalStackLayout Grid.Column="0" Spacing="5" HorizontalOptions="Center">
+                                <Image Source="dieta.jpg" HeightRequest="80" Aspect="AspectFit"/>
+                                <Label Text="Dieta de volumen" TextColor="#444444" />
                             </VerticalStackLayout>
-                            <!-- Columna 1: Perfil de la nutrióloga -->
-                            <VerticalStackLayout Grid.Column="1"
-                                                 Spacing="5"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-                                <Frame CornerRadius="40"
-                                       BorderColor="Transparent"
-                                       HeightRequest="80"
-                                       WidthRequest="80"
-                                       Padding="0"
-                                       HorizontalOptions="Center">
-                                    <Image Source="nutriologa.jpg" Aspect="AspectFill" />
+                            <VerticalStackLayout Grid.Column="1" Spacing="5" HorizontalOptions="Center">
+                                <Frame CornerRadius="40" BorderColor="Transparent" HeightRequest="80" WidthRequest="80" Padding="0">
+                                    <Image Source="nutriologa.jpg" Aspect="AspectFill"/>
                                 </Frame>
-                                <Label Text="Nutrióloga"
-                                       FontAttributes="Bold"
-                                       TextColor="#444444"/>
-                                <Label Text="Lic. Maria Estefania Juarez Aramburu"
-                                       TextColor="#444444"/>
+                                <Label Text="Nutrióloga" FontAttributes="Bold" TextColor="#444444"/>
+                                <Label Text="Lic. Maria Estefania Juarez Aramburu" TextColor="#444444"/>
                             </VerticalStackLayout>
-                            <!-- Columna 2: Botón "Editar dieta" -->
-                            <VerticalStackLayout Grid.Column="2"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
+                            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
                                 <Button Text="Editar dieta"
                                         BackgroundColor="#FF6B3D"
                                         TextColor="White"
@@ -189,11 +130,11 @@
                         </Grid>
                     </VerticalStackLayout>
                 </Frame>
+
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- BARRA DE NAVEGACIÓN: fija en la parte inferior -->
-        <!-- Botones de navegación abajo -->
+        <!-- BARRA DE NAVEGACIÓN -->
         <Grid Grid.Row="2"
               ColumnDefinitions="*,*,*,*"
               Padding="10"
@@ -206,4 +147,3 @@
         </Grid>
     </Grid>
 </ContentPage>
-

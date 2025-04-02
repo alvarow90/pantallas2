@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using System.Threading.Tasks;
+using SQLite;
 using pantallas.Models;
 
 namespace pantallas.Services
@@ -13,13 +14,12 @@ namespace pantallas.Services
             _db.CreateTableAsync<Usuario>().Wait(); // Crea la tabla si no existe
         }
 
-        // Insertar usuario directamente
+        // Insertar usuario directamente (sin validación previa)
         public Task<int> AgregarUsuarioAsync(Usuario usuario)
         {
             return _db.InsertAsync(usuario);
         }
 
-        // Obtener usuario por correo (puede retornar null)
         // Obtener usuario por correo (puede retornar null)
         public Task<Usuario?> ObtenerUsuarioPorCorreoAsync(string correo)
         {
@@ -27,7 +27,6 @@ namespace pantallas.Services
                       .Where(u => u.Correo == correo)
                       .FirstOrDefaultAsync();
         }
-
 
         // Validar login por correo y contraseña (puede retornar null)
         public Task<Usuario?> ValidarLoginAsync(string correo, string contraseña)
@@ -37,19 +36,36 @@ namespace pantallas.Services
                       .FirstOrDefaultAsync();
         }
 
+        // Obtener usuario por ID
+        public Task<Usuario?> ObtenerUsuarioPorIdAsync(int id)
+        {
+            return _db.Table<Usuario>()
+                      .Where(u => u.Id == id)
+                      .FirstOrDefaultAsync();
+        }
 
         // Registrar nuevo usuario solo si no existe previamente
-        public async Task<bool> RegistrarUsuario(Usuario usuario)
+        public async Task<bool> RegistrarUsuarioAsync(Usuario usuario)
         {
-            var existente = await _db.Table<Usuario>()
-                                     .Where(u => u.Correo == usuario.Correo)
-                                     .FirstOrDefaultAsync();
+            var existente = await ObtenerUsuarioPorCorreoAsync(usuario.Correo);
 
             if (existente != null)
-                return false; // El correo ya está registrado
+                return false; // Ya existe un usuario con ese correo
 
             await _db.InsertAsync(usuario);
             return true;
+        }
+
+        // Actualizar datos del usuario
+        public Task<int> ActualizarUsuarioAsync(Usuario usuario)
+        {
+            return _db.UpdateAsync(usuario);
+        }
+
+        // Eliminar usuario por ID
+        public Task<int> EliminarUsuarioAsync(int id)
+        {
+            return _db.DeleteAsync<Usuario>(id);
         }
     }
 }

@@ -75,7 +75,7 @@ namespace pantallas
                 Rol = rol
             };
 
-            bool creado = await App.BaseDeDatos.RegistrarUsuario(usuario);
+            bool creado = await App.BaseDeDatos.RegistrarUsuarioAsync(usuario);
 
             if (creado)
             {

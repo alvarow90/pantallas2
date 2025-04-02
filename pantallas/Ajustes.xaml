@@ -55,10 +55,11 @@
 
                         <!-- Información del perfil -->
                         <VerticalStackLayout VerticalOptions="Center">
-                            <Label Text="Emiliano Montoya"
-                                   FontSize="16"
-                                   FontAttributes="Bold"
-                                   TextColor="#FFFFFF"/>
+                            <Label x:Name="LabelNombreUsuario"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#FFFFFF"/>        
+
                             <Label Text="Editar información"
                                    FontSize="14"
                                    TextColor="#CCCCCC"/>

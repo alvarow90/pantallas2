@@ -8,6 +8,15 @@ namespace pantallas
         public Ajustes()
         {
             InitializeComponent();
+
+            if (App.UsuarioActual != null)
+            {
+                LabelNombreUsuario.Text = App.UsuarioActual.Nombre;
+            }
+            else
+            {
+                LabelNombreUsuario.Text = "Invitado";
+            }
         }
 
         // Manejador para el botón de retroceso (backarrow)
