@@ -6,37 +6,6 @@ namespace pantallas
     {
         public Dashboard()
         {
-            InitializeComponent(); // ← Este método lo genera el archivo .g.cs cuando todo está bien
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
-
-        private async void OnVerDietaCompleta(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Detallenutricion());
-        }
-        private async void OnVerDetalleEntrenamiento(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Detalleentrenamiento());
-        }
-        private async void OnDashboardClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Detalleentrenamiento());
-        }
-        private async void OnEntrenamientoClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new NewPage1());
-        }
-        private async void OnNutricionClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Nutricion());
-        }
-        private async void OnChatClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Nutricion());
             InitializeComponent();
 
             // Mostrar saludo personalizado
@@ -49,6 +18,34 @@ namespace pantallas
                 LabelBienvenida.Text = "Hola, invitado!";
             }
         }
+
+        private async void OnDashboardClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Dashboard");
+        }
+
+        private async void OnEntrenamientoClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Entrenamiento");
+        }
+
+        private async void OnNutricionClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Nutricion");
+        }
+
+        private async void OnChatClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Chat");
+        }
+
+        private async void OnAjustesClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Ajustes");
+        }
+    }
+}
+
 
         
         }
